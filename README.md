@@ -17,6 +17,23 @@ Build the .zip file from this project, or download from this [Google Drive](http
 - Enable the "Developer mode" toggle on the top right
 - Click "Load unpacked" at the top left, and select the zip file
 
+## Features
+
+* View the full muban component tree
+    * The "grey" nodes in the tree are "refs" that have bindings attached to them
+    * The tree can be filtered
+    * When hovering components or refs in the tree, they are highlighted on the page
+    * Inspecting (picking) components on the page will show them selected in devtools
+* Selecting a component in the tree shows an inspector on the right
+    * Show component props
+    * Show component refs
+    * Show component bindings (both from self or parent)
+    * Show parent/owner components
+    * Show provided context
+    * Values that are reactive/refs/computeds are editable
+* Timeline to show (mouse) events that happens on the page 
+* Light and Dark mode
+
 ### Important Usage Notes
 
 To make it work for pages opened via `file://` protocol, you need to check "Allow access to file URLs" for this 

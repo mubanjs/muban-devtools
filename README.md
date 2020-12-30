@@ -1,6 +1,6 @@
 # muban-devtools
 
-<p align="center"><img width="720px" src="https://raw.githubusercontent.com/mubanjs/muban-devtools/dev/media/screenshot.jpg" alt="screenshot"></p>
+<p align="center"><img width="720px" src="https://raw.githubusercontent.com/mubanjs/muban-devtools/main/media/screenshot.jpg" alt="screenshot"></p>
 
 > This extension is forked from [Vue 3 devtools beta](https://github.com/vuejs/vue-devtools/tree/next) - an amazing 
 > peace of software! Muban makes use of the same Reactivity API from Vue, so a lot of the features in devtools are 

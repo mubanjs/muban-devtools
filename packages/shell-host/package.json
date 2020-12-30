@@ -1,14 +1,14 @@
 {
-  "name": "@vue-devtools/shell-host",
+  "name": "@muban-devtools/shell-host",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --no-info"
   },
   "dependencies": {
-    "@vue-devtools/app-backend": "^0.0.0",
-    "@vue-devtools/app-frontend": "^0.0.0",
-    "@vue-devtools/shared-utils": "^0.0.0"
+    "@muban-devtools/app-backend": "^0.0.0",
+    "@muban-devtools/app-frontend": "^0.0.0",
+    "@muban-devtools/shared-utils": "^0.0.0"
   },
   "devDependencies": {
     "webpack": "^4.19.0",

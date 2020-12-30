@@ -98,7 +98,7 @@ export default {
 
 <template>
   <div class="border-b border-gray-200 dark:border-gray-900 flex items-center space-x-2 px-2 h-10">
-    <AppMainMenu />
+    <!--    <AppMainMenu />-->
 
     <AppHistoryNav />
 
@@ -153,14 +153,14 @@ export default {
         <div class="border-t border-gray-200 dark:border-gray-900 my-1" />
 
         <VueDropdownButton
-          href="https://new-issue.vuejs.org/?repo=vuejs/vue-devtools"
+          href="https://github.com/mubanjs/muban"
           target="_blank"
         >
           Report a bug
         </VueDropdownButton>
 
         <VueDropdownButton
-          href="https://github.com/vuejs/vue-devtools/releases"
+          href="https://github.com/mubanjs/muban/tags"
           target="_blank"
         >
           Full changelog

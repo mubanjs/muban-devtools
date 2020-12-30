@@ -18,7 +18,7 @@ export function setupDevtoolsPlugin (pluginDescriptor: PluginDescriptor, setupFn
     hook.emit(HOOK_SETUP, pluginDescriptor, setupFn)
   } else {
     const target = getTarget()
-    const list = target.__VUE_DEVTOOLS_PLUGINS__ = target.__VUE_DEVTOOLS_PLUGINS__ || []
+    const list = target.__MUBAN_DEVTOOLS_PLUGINS__ = target.__MUBAN_DEVTOOLS_PLUGINS__ || []
     list.push({
       pluginDescriptor,
       setupFn

@@ -1,5 +1,5 @@
 {
-  "name": "@vue-devtools/build-tools",
+  "name": "@muban-devtools/build-tools",
   "version": "0.0.0",
   "private": true,
   "main": "src/index.js",

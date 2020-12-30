@@ -2,7 +2,7 @@ import { isChrome } from '@utils/env'
 
 if (isChrome) {
   chrome.runtime.onMessage.addListener(request => {
-    if (request === 'vue-get-context-menu-target') {
+    if (request === 'muban-get-context-menu-target') {
       getContextMenuInstance()
     }
   })

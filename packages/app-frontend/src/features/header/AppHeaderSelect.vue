@@ -168,7 +168,7 @@ export default {
     offset="0"
     :open.sync="isOpen"
     :open-group="`header-select-${_uid}`"
-    :delay="showDelayEnabled ? { show: 250, hide: 0 } : 0"
+    :delay="showDelayEnabled ? { show: 50, hide: 0 } : 0"
     @apply-show="isShown = true"
     @apply-hide="isShown = false"
   >

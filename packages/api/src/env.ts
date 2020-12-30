@@ -2,14 +2,14 @@ import { PluginDescriptor, SetupFunction } from '.'
 import { HookHandler } from './api'
 
 interface GlobalTarget {
-  __VUE_DEVTOOLS_PLUGINS__: Array<{
+  __MUBAN_DEVTOOLS_PLUGINS__: Array<{
     pluginDescriptor: PluginDescriptor
     setupFn: SetupFunction
   }>
 }
 
 export function getDevtoolsGlobalHook (): any {
-  return (getTarget() as any).__VUE_DEVTOOLS_GLOBAL_HOOK__
+  return (getTarget() as any).__MUBAN_DEVTOOLS_GLOBAL_HOOK__
 }
 
 export function getTarget (): GlobalTarget {

@@ -334,7 +334,7 @@ export function getCustomRefDetails (instance, key, ref) {
         display: `&lt;${name}` +
           (ref.id ? ` <span class="attr-title">id</span>="${ref.id}"` : '') +
           (ref.className ? ` <span class="attr-title">class</span>="${ref.className}"` : '') + '&gt;',
-        uid: instance.__VUE_DEVTOOLS_UID__,
+        uid: instance.__MUBAN_DEVTOOLS_UID__,
         type: 'reference'
       }
     }
@@ -610,8 +610,8 @@ export function openInEditor (file) {
     } else {
       const msg = 'Opening component ${fileName} failed'
       const target = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {}
-      if (target.__VUE_DEVTOOLS_TOAST__) {
-        target.__VUE_DEVTOOLS_TOAST__(msg, 'error')
+      if (target.__MUBAN_DEVTOOLS_TOAST__) {
+        target.__MUBAN_DEVTOOLS_TOAST__(msg, 'error')
       } else {
         console.log('%c' + msg, 'color:red')
       }

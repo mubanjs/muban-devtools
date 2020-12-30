@@ -5,9 +5,9 @@ let pendingAction = null
 
 if (isChrome) {
   chrome.runtime.onMessage.addListener(request => {
-    if (request === 'vue-panel-shown') {
+    if (request === 'muban-panel-shown') {
       onPanelShown()
-    } else if (request === 'vue-panel-hidden') {
+    } else if (request === 'muban-panel-hidden') {
       onPanelHidden()
     }
   })

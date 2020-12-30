@@ -295,7 +295,7 @@ export function setupComponentsBridgeEvents (bridge) {
   })
 
   bridge.on(BridgeEvents.TO_FRONT_COMPONENT_INSPECT_DOM, () => {
-    chrome.devtools.inspectedWindow.eval('inspect(window.__VUE_DEVTOOLS_INSPECT_TARGET__)')
+    chrome.devtools.inspectedWindow.eval('inspect(window.__MUBAN_DEVTOOLS_INSPECT_TARGET__)')
   })
 }
 

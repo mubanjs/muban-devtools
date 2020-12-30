@@ -1,26 +1,23 @@
 {
-  "name": "vue-devtools",
+  "name": "muban-devtools",
   "version": "6.0.0-beta.3",
-  "description": "devtools for Vue.js!",
+  "description": "devtools for Muban!",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
     "dev:shell": "cross-env PORT=8100 cd packages/shell-dev && webpack-dev-server --inline --hot --no-info",
-    "dev:shell-vue3": "concurrently \"cd packages/shell-dev-vue3 && yarn dev\" \"cd packages/shell-host && yarn dev\"",
+    "dev:shell-muban": "concurrently \"cd packages/shell-dev-muban && yarn dev\" \"cd packages/shell-host && yarn dev\"",
     "dev:chrome": "cd packages/shell-chrome && webpack --watch --hide-modules",
     "dev:chrome:prod": "cd packages/shell-chrome && cross-env NODE_ENV=production webpack --watch --hide-modules",
     "build": "lerna run build",
-    "build:watch": "lerna run build --scope @vue-devtools/* --scope @vue/devtools-api && lerna run build:watch --stream --no-sort --concurrency 99",
+    "build:watch": "lerna run build --scope @muban-devtools/* --scope @muban/devtools-api && lerna run build:watch --stream --no-sort --concurrency 99",
     "lint": "eslint --ext .js,.ts,.vue .",
-    "run:firefox": "web-ext run -s packages/shell-chrome -a dist -i src",
-    "zip": "npm run zip:chrome && npm run zip:firefox",
+    "zip": "npm run zip:chrome",
     "zip:chrome": "cd packages && zip -r -FS ../dist/chrome.zip shell-chrome -x *src/* -x *webpack.config.js -x *node_modules/*",
-    "zip:firefox": "web-ext build -s packages/shell-chrome -a dist -i src --overwrite-dest",
-    "sign:firefox": "node ./sign-firefox.js",
     "release": "npm run test && node release.js && npm run build && npm run zip && npm run pub",
-    "release:beta": "cross-env RELEASE_CHANNEL=beta npm run release && npm run sign:firefox",
+    "release:beta": "cross-env RELEASE_CHANNEL=beta npm run release",
     "pub": "npm run pub:electron && npm run pub:api",
     "pub:electron": "cd packages/shell-electron && npm publish --tag beta",
     "pub:api": "cd packages/api && npm publish",
@@ -31,14 +28,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuejs/vue-devtools.git"
+    "url": "git+https://github.com/mubanjs/muban-devtools.git"
   },
-  "author": "Evan You",
+  "author": "Arjan van Wijk",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vuejs/vue-devtools/issues"
+    "url": "https://github.com/mubanjs/muban-devtools/issues"
   },
-  "homepage": "https://github.com/vuejs/vue-devtools#readme",
+  "homepage": "https://github.com/mubanjs/muban-devtools#readme",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.29.0",
     "@typescript-eslint/parser": "^2.29.0",

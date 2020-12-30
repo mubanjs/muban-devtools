@@ -67,7 +67,7 @@ export default class ComponentPicker {
 
     if (this.selectedInstance) {
       const parentInstances = await this.ctx.api.walkComponentParents(this.selectedInstance)
-      this.ctx.bridge.send(BridgeEvents.TO_FRONT_COMPONENT_PICK, { id: this.selectedInstance.__VUE_DEVTOOLS_UID__, parentIds: parentInstances.map(i => i.__VUE_DEVTOOLS_UID__) })
+      this.ctx.bridge.send(BridgeEvents.TO_FRONT_COMPONENT_PICK, { id: this.selectedInstance.__MUBAN_DEVTOOLS_UID__, parentIds: parentInstances.map(i => i.__MUBAN_DEVTOOLS_UID__) })
     } else {
       this.ctx.bridge.send(BridgeEvents.TO_FRONT_COMPONENT_PICK_CANCELED, null)
     }

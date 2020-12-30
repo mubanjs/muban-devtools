@@ -1,12 +1,12 @@
 {
-  "name": "@vue-devtools/shell-dev",
+  "name": "@muban-devtools/shell-dev",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@vue-devtools/shell-host": "^0.0.0"
+    "@muban-devtools/shell-host": "^0.0.0"
   },
   "devDependencies": {
-    "@vue-devtools/build-tools": "^0.0.0",
+    "@muban-devtools/build-tools": "^0.0.0",
     "launch-editor-middleware": "^2.2.1",
     "webpack": "^4.19.0",
     "webpack-cli": "^3.1.0",

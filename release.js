@@ -36,7 +36,7 @@ const curVersion = pkg.version
       const [, baseVersion, betaVersion] = /(.*)-beta\.(\w+)/.exec(newVersion)
       manifest.version = `${baseVersion}.${betaVersion}`
       manifest.version_name = `${baseVersion} beta ${betaVersion}`
-      applyIcons(manifest, '-beta')
+      applyIcons(manifest)
     } else {
       manifest.version = newVersion
       manifest.version_name = newVersion

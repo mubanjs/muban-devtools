@@ -47,7 +47,6 @@ module.exports = {
     {
       files: [
         'release.js',
-        'sign-firefox.js',
         'packages/build-tools/**',
         'packages/shell-electron/**',
         '**webpack.config.js'

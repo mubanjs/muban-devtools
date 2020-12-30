@@ -7,21 +7,21 @@ window.addEventListener('message', handshake)
 
 function sendListening () {
   window.postMessage({
-    source: 'vue-devtools-backend-injection',
+    source: 'muban-devtools-backend-injection',
     payload: 'listening'
   }, '*')
 }
 sendListening()
 
 function handshake (e) {
-  if (e.data.source === 'vue-devtools-proxy' && e.data.payload === 'init') {
+  if (e.data.source === 'muban-devtools-proxy' && e.data.payload === 'init') {
     window.removeEventListener('message', handshake)
 
     let listeners = []
     const bridge = new Bridge({
       listen (fn) {
         const listener = evt => {
-          if (evt.data.source === 'vue-devtools-proxy' && evt.data.payload) {
+          if (evt.data.source === 'muban-devtools-proxy' && evt.data.payload) {
             fn(evt.data.payload)
           }
         }
@@ -33,7 +33,7 @@ function handshake (e) {
         //   console.log('[chrome] backend -> devtools', data)
         // }
         window.postMessage({
-          source: 'vue-devtools-backend',
+          source: 'muban-devtools-backend',
           payload: data
         }, '*')
       }

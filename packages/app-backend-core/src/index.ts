@@ -144,8 +144,8 @@ async function connect () {
 
     if (component) {
       const id = getComponentId(app, uid, ctx)
-      if (component.__VUE_DEVTOOLS_UID__ == null) {
-        component.__VUE_DEVTOOLS_UID__ = id
+      if (component.__MUBAN_DEVTOOLS_UID__ == null) {
+        component.__MUBAN_DEVTOOLS_UID__ = id
       }
       if (!ctx.currentAppRecord.instanceMap.has(id)) {
         ctx.currentAppRecord.instanceMap.set(id, component)
@@ -177,7 +177,7 @@ async function connect () {
       const [el] = await ctx.api.getComponentRootElements(instance)
       if (el) {
         // @ts-ignore
-        window.__VUE_DEVTOOLS_INSPECT_TARGET__ = el
+        window.__MUBAN_DEVTOOLS_INSPECT_TARGET__ = el
         ctx.bridge.send(BridgeEvents.TO_FRONT_COMPONENT_INSPECT_DOM, null)
       }
     }

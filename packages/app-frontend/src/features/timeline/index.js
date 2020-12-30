@@ -334,11 +334,11 @@ function takeScreenshot (event) {
 
     // Screenshot
     if (typeof chrome !== 'undefined') {
-      chrome.tabs.captureVisibleTab({
-        format: 'png'
-      }, dataUrl => {
-        screenshot.image = dataUrl
-      })
+      // chrome.tabs.captureVisibleTab({
+      //   format: 'png'
+      // }, dataUrl => {
+      //   screenshot.image = dataUrl
+      // })
     }
   } else {
     event.screenshot = lastScreenshot

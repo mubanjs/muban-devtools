@@ -23,7 +23,7 @@ export function addPlugin (pluginDescriptor: PluginDescriptor, setupFn: SetupFun
     plugin: serializePlugin(plugin)
   })
 
-  const targetList = target.__VUE_DEVTOOLS_REGISTERED_PLUGINS__ = target.__VUE_DEVTOOLS_REGISTERED_PLUGINS__ || []
+  const targetList = target.__MUBAN_DEVTOOLS_REGISTERED_PLUGINS__ = target.__MUBAN_DEVTOOLS_REGISTERED_PLUGINS__ || []
   targetList.push({
     pluginDescriptor,
     setupFn
@@ -31,19 +31,19 @@ export function addPlugin (pluginDescriptor: PluginDescriptor, setupFn: SetupFun
 }
 
 export async function addQueuedPlugins (ctx: BackendContext) {
-  if (target.__VUE_DEVTOOLS_PLUGINS__ && Array.isArray(target.__VUE_DEVTOOLS_PLUGINS__)) {
-    for (const k in target.__VUE_DEVTOOLS_PLUGINS__) {
-      const plugin = target.__VUE_DEVTOOLS_PLUGINS__[k]
+  if (target.__MUBAN_DEVTOOLS_PLUGINS__ && Array.isArray(target.__MUBAN_DEVTOOLS_PLUGINS__)) {
+    for (const k in target.__MUBAN_DEVTOOLS_PLUGINS__) {
+      const plugin = target.__MUBAN_DEVTOOLS_PLUGINS__[k]
       addPlugin(plugin.pluginDescriptor, plugin.setupFn, ctx)
     }
-    target.__VUE_DEVTOOLS_PLUGINS__ = null
+    target.__MUBAN_DEVTOOLS_PLUGINS__ = null
   }
 }
 
 export async function addPreviouslyRegisteredPlugins (ctx: BackendContext) {
-  if (target.__VUE_DEVTOOLS_REGISTERED_PLUGINS__ && Array.isArray(target.__VUE_DEVTOOLS_REGISTERED_PLUGINS__)) {
-    for (const k in target.__VUE_DEVTOOLS_REGISTERED_PLUGINS__) {
-      const plugin = target.__VUE_DEVTOOLS_REGISTERED_PLUGINS__[k]
+  if (target.__MUBAN_DEVTOOLS_REGISTERED_PLUGINS__ && Array.isArray(target.__MUBAN_DEVTOOLS_REGISTERED_PLUGINS__)) {
+    for (const k in target.__MUBAN_DEVTOOLS_REGISTERED_PLUGINS__) {
+      const plugin = target.__MUBAN_DEVTOOLS_REGISTERED_PLUGINS__[k]
       addPlugin(plugin.pluginDescriptor, plugin.setupFn, ctx)
     }
   }

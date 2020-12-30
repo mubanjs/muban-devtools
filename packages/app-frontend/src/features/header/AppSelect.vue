@@ -76,11 +76,11 @@ export default {
       <div class="app-button flex items-center">
         <span class="truncate flex-1">{{ app.name }}</span>
         <span class="opacity-50 flex-none flex items-center">
-          <img
+          <!--          <img
             src="~@front/assets/vue-logo.svg"
             class="w-6 h-6 mr-2"
             alt="Vue"
-          >
+          >-->
           {{ app.version }}
         </span>
       </div>

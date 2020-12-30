@@ -8,14 +8,10 @@ import {
 import { BridgeEvents } from '@vue-devtools/shared-utils'
 import { JobQueue } from './util/queue'
 
-import { backend as backendVue1 } from '@vue-devtools/app-backend-vue1'
-import { backend as backendVue2 } from '@vue-devtools/app-backend-vue2'
-import { backend as backendVue3 } from '@vue-devtools/app-backend-vue3'
+import { backend as backendMuban } from '@vue-devtools/app-backend-muban'
 
 const availableBackends = [
-  backendVue1,
-  backendVue2,
-  backendVue3
+  backendMuban
 ]
 
 const enabledBackends: Set<DevtoolsBackend> = new Set()
@@ -34,7 +30,7 @@ async function registerAppJob (options: AppRecordOptions, ctx: BackendContext) {
   }
 
   let record: AppRecord
-  const baseFrameworkVersion = parseInt(options.version.substr(0, options.version.indexOf('.')))
+  const baseFrameworkVersion = 10 // parseInt(options.version.substr(0, options.version.indexOf('.')))
   for (let i = 0; i < availableBackends.length; i++) {
     const backend = availableBackends[i]
     if (backend.frameworkVersion === baseFrameworkVersion) {
@@ -58,10 +54,10 @@ async function registerAppJob (options: AppRecordOptions, ctx: BackendContext) {
         rootInstance: await ctx.api.getAppRootInstance(options.app),
         timelineEventMap: new Map()
       }
-      options.app.__VUE_DEVTOOLS_APP_RECORD__ = record
+      options.app.__MUBAN_DEVTOOLS_APP_RECORD__ = record
       const rootId = `${record.id}:root`
       record.instanceMap.set(rootId, record.rootInstance)
-      record.rootInstance.__VUE_DEVTOOLS_UID__ = rootId
+      record.rootInstance.__MUBAN_DEVTOOLS_UID__ = rootId
       await ctx.api.registerApplication(record)
       ctx.appRecords.push(record)
       ctx.bridge.send(BridgeEvents.TO_FRONT_APP_ADD, {
@@ -96,11 +92,11 @@ export function mapAppRecord (record: AppRecord): SimpleAppRecord {
 }
 
 export function getAppRecordId (app): number {
-  if (app.__VUE_DEVTOOLS_APP_RECORD_ID__ != null) {
-    return app.__VUE_DEVTOOLS_APP_RECORD_ID__
+  if (app.__MUBAN_DEVTOOLS_APP_RECORD_ID__ != null) {
+    return app.__MUBAN_DEVTOOLS_APP_RECORD_ID__
   }
   const id = recordId++
-  app.__VUE_DEVTOOLS_APP_RECORD_ID__ = id
+  app.__MUBAN_DEVTOOLS_APP_RECORD_ID__ = id
   return id
 }
 

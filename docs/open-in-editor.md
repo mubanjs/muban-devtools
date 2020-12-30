@@ -1,16 +1,9 @@
 # Open component in editor
 
-## Vue CLI 3
-
-Vue CLI 3 supports this feature out-of-the-box when running `vue-cli-service serve`.
-
-## Nuxt.js & Quasar CLI
-
-Nuxt & Quasar CLI supports this feature out-of-the-box. Make sure to be in debug mode.
-
 ## Webpack
 
-In your Vue project, install the [launch-editor-middleware](https://github.com/yyx990803/launch-editor#middleware) package and modify your webpack configuration:
+In your Muban project, install the [launch-editor-middleware](https://github.com/yyx990803/launch-editor#middleware) 
+package and modify your webpack configuration:
 
 1. Import the package:
 
@@ -48,7 +41,7 @@ You can change the request host (default `/`) with the following code in your fr
 if (process.env.NODE_ENV !== 'production')
   // App served from port 4000
   // Webpack dev server on port 9000
-  window.VUE_DEVTOOLS_CONFIG = {
+  window.MUBAN_DEVTOOLS_CONFIG = {
     openInEditorHost: 'http://localhost:9000/'
   }
 }

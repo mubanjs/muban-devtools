@@ -21,15 +21,15 @@ function createPanelIfHasVue () {
   panelLoaded = false
   panelShown = false
   chrome.devtools.inspectedWindow.eval(
-    '!!(window.__VUE_DEVTOOLS_GLOBAL_HOOK__.Vue || window.__VUE_DEVTOOLS_GLOBAL_HOOK__.apps.length)',
-    function (hasVue) {
-      if (!hasVue || created) {
+    '!!(window.__MUBAN_DEVTOOLS_GLOBAL_HOOK__.Vue || window.__MUBAN_DEVTOOLS_GLOBAL_HOOK__.apps.length)',
+    function (hasMuban) {
+      if (!hasMuban || created) {
         return
       }
       clearInterval(checkVueInterval)
       created = true
       chrome.devtools.panels.create(
-        'Vue', 'icons/128.png', 'devtools.html',
+        'Muban', 'icons/128.png', 'devtools.html',
         panel => {
           // panel loaded
           panel.onShown.addListener(onPanelShown)
@@ -43,20 +43,20 @@ function createPanelIfHasVue () {
 // Runtime messages
 
 chrome.runtime.onMessage.addListener(request => {
-  if (request === 'vue-panel-load') {
+  if (request === 'muban-panel-load') {
     onPanelLoad()
-  } else if (request.vueToast) {
-    toast(request.vueToast.message, request.vueToast.type)
-  } else if (request.vueContextMenu) {
-    onContextMenu(request.vueContextMenu)
+  } else if (request.mubanToast) {
+    toast(request.mubanToast.message, request.mubanToast.type)
+  } else if (request.mubanContextMenu) {
+    onContextMenu(request.mubanContextMenu)
   }
 })
 
 // Page context menu entry
 
 function onContextMenu ({ id }) {
-  if (id === 'vue-inspect-instance') {
-    const src = 'window.__VUE_DEVTOOLS_CONTEXT_MENU_HAS_TARGET__'
+  if (id === 'muban-inspect-instance') {
+    const src = 'window.__MUBAN_DEVTOOLS_CONTEXT_MENU_HAS_TARGET__'
 
     chrome.devtools.inspectedWindow.eval(src, function (res, err) {
       if (err) {
@@ -64,11 +64,11 @@ function onContextMenu ({ id }) {
       }
       if (typeof res !== 'undefined' && res) {
         panelAction(() => {
-          chrome.runtime.sendMessage('vue-get-context-menu-target')
-        }, 'Open Vue devtools to see component details')
+          chrome.runtime.sendMessage('muban-get-context-menu-target')
+        }, 'Open Muban devtools to see component details')
       } else {
         pendingAction = null
-        toast('No Vue component was found', 'warn')
+        toast('No Muban component was found', 'warn')
       }
     })
   }
@@ -101,13 +101,13 @@ function onPanelLoad () {
 // Manage panel visibility
 
 function onPanelShown () {
-  chrome.runtime.sendMessage('vue-panel-shown')
+  chrome.runtime.sendMessage('muban-panel-shown')
   panelShown = true
   panelLoaded && executePendingAction()
 }
 
 function onPanelHidden () {
-  chrome.runtime.sendMessage('vue-panel-hidden')
+  chrome.runtime.sendMessage('muban-panel-hidden')
   panelShown = false
 }
 
@@ -115,7 +115,7 @@ function onPanelHidden () {
 
 function toast (message, type = 'normal') {
   const src = `(function() {
-    __VUE_DEVTOOLS_TOAST__(\`${message}\`, '${type}');
+    __MUBAN_DEVTOOLS_TOAST__(\`${message}\`, '${type}');
   })()`
 
   chrome.devtools.inspectedWindow.eval(src, function (res, err) {

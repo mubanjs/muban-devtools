@@ -1,6 +1,6 @@
 <script>
 import { computed, toRefs, onMounted, ref, watchEffect } from '@vue/composition-api'
-import { getComponentDisplayName, UNDEFINED } from '@utils/util'
+import { classify, getComponentDisplayName, kebabize, UNDEFINED } from '@utils/util'
 import SharedData from '@utils/shared-data'
 import { useComponent } from '.'
 import { useComponentHighlight } from './highlight'
@@ -25,7 +25,13 @@ export default {
   setup (props) {
     const { instance } = toRefs(props)
 
-    const displayName = computed(() => getComponentDisplayName(props.instance.name, SharedData.componentNameStyle))
+    const displayName = computed(() => {
+      if (props.instance.type === 'component') {
+        return classify(props.instance.name)
+      } else {
+        return kebabize(props.instance.name)
+      }
+    })
 
     const componentHasKey = computed(() => (props.instance.renderKey === 0 || !!props.instance.renderKey) && props.instance.renderKey !== UNDEFINED)
 
@@ -117,7 +123,13 @@ export default {
       <span class="content">
         <span class="angle-bracket text-gray-400 dark:text-gray-600">&lt;</span>
 
-        <span class="item-name text-green-500">{{ displayName }}</span>
+        <span
+          :class="{
+            'item-name': true,
+            'text-green-500': instance.type === 'component',
+            'text-gray-500': instance.type === 'ref'
+          }"
+        >{{ displayName }}</span>
 
         <span
           v-if="componentHasKey"

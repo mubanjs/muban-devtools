@@ -5,6 +5,7 @@ export type ComponentInstance = any // @TODO
 export interface ComponentTreeNode {
   uid: number
   id: string
+  type?: string
   name: string
   renderKey: string
   inactive: boolean

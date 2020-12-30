@@ -54,17 +54,22 @@ import { useOrientation } from '../layout/orientation'
 
 const keyOrder = {
   props: 1,
-  undefined: 3,
-  computed: 4,
-  'register module': 1,
-  'unregister module': 1,
-  setup: 2,
-  state: 2,
-  getters: 3,
-  mutation: 1,
-  'vuex bindings': 5,
-  $refs: 6,
-  $attrs: 7
+  refs: 2,
+  bindings: 3,
+  'bindings (self)': 3,
+  context: 4,
+  parents: 9,
+  undefined: 5
+  // computed: 4,
+  // 'register module': 1,
+  // 'unregister module': 1,
+  // setup: 2,
+  // state: 2,
+  // getters: 3,
+  // mutation: 1,
+  // 'vuex bindings': 5,
+  // $refs: 6,
+  // $attrs: 7
 }
 
 export default {

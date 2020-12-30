@@ -1,5 +1,5 @@
 // the background script runs all the time and serves as a central message
-// hub for each vue devtools (panel + proxy + backend) instance.
+// hub for each Muban devtools (panel + proxy + backend) instance.
 
 const ports = {}
 
@@ -77,20 +77,18 @@ function doublePipe (id, one, two) {
 }
 
 chrome.runtime.onMessage.addListener((req, sender) => {
-  if (sender.tab && req.vueDetected) {
-    const suffix = req.nuxtDetected ? '.nuxt' : ''
-
+  if (sender.tab && req.mubanDetected) {
     chrome.browserAction.setIcon({
       tabId: sender.tab.id,
       path: {
-        16: `icons/16${suffix}.png`,
-        48: `icons/48${suffix}.png`,
-        128: `icons/128${suffix}.png`
+        16: 'icons/16.png',
+        48: 'icons/48.png',
+        128: 'icons/128.png'
       }
     })
     chrome.browserAction.setPopup({
       tabId: sender.tab.id,
-      popup: req.devtoolsEnabled ? `popups/enabled${suffix}.html` : `popups/disabled${suffix}.html`
+      popup: req.devtoolsEnabled ? 'popups/enabled.html' : 'popups/disabled.html'
     })
   }
 })
@@ -106,8 +104,8 @@ function updateContextMenuItem () {
   chrome.contextMenus.removeAll(() => {
     if (ports[activeTabId]) {
       chrome.contextMenus.create({
-        id: 'vue-inspect-instance',
-        title: 'Inspect Vue component',
+        id: 'muban-inspect-instance',
+        title: 'Inspect Muban component',
         contexts: ['all']
       })
     }
@@ -116,7 +114,7 @@ function updateContextMenuItem () {
 
 chrome.contextMenus.onClicked.addListener((info, tab) => {
   chrome.runtime.sendMessage({
-    vueContextMenu: {
+    mubanContextMenu: {
       id: info.menuItemId
     }
   })

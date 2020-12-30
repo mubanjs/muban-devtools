@@ -15,15 +15,15 @@ sendMessageToBackend('init')
 
 function sendMessageToBackend (payload) {
   window.postMessage({
-    source: 'vue-devtools-proxy',
+    source: 'muban-devtools-proxy',
     payload: payload
   }, '*')
 }
 
 function sendMessageToDevtools (e) {
-  if (e.data && e.data.source === 'vue-devtools-backend') {
+  if (e.data && e.data.source === 'muban-devtools-backend') {
     port.postMessage(e.data.payload)
-  } else if (e.data && e.data.source === 'vue-devtools-backend-injection') {
+  } else if (e.data && e.data.source === 'muban-devtools-backend-injection') {
     if (e.data.payload === 'listening') {
       sendMessageToBackend('init')
     }

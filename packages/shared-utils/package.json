@@ -1,5 +1,5 @@
 {
-  "name": "@vue-devtools/shared-utils",
+  "name": "@muban-devtools/shared-utils",
   "version": "0.0.0",
   "private": true,
   "main": "./lib/index.js",
@@ -11,7 +11,7 @@
     "ts": "tsc -p tsconfig.json -d -outDir lib"
   },
   "dependencies": {
-    "@vue-devtools/app-backend": "^0.0.0"
+    "@muban-devtools/app-backend": "^0.0.0"
   },
   "devDependencies": {
     "@types/node": "^13.9.1",

@@ -7,7 +7,7 @@ export enum BuiltinBackendFeature {
 }
 
 export interface DevtoolsBackend {
-  frameworkVersion: 1 | 2 | 3
+  frameworkVersion: 1 | 2 | 3 | 10
   availableFeatures: [BuiltinBackendFeature | string]
   setup: (api: DevtoolsApi) => void
 }

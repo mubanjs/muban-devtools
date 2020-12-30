@@ -2,63 +2,42 @@ import { installToast } from '@back/toast'
 import { isFirefox } from '@utils/env'
 
 window.addEventListener('message', e => {
-  if (e.source === window && e.data.vueDetected) {
+  if (e.source === window && e.data.mubanDetected) {
     chrome.runtime.sendMessage(e.data)
   }
 })
 
 function detect (win) {
   setTimeout(() => {
-    // Method 1: Check Nuxt.js
-    const nuxtDetected = !!(window.__NUXT__ || window.$nuxt)
-
-    if (nuxtDetected) {
-      let Vue
-
-      if (window.$nuxt) {
-        Vue = window.$nuxt.$root.constructor
-      }
-
-      win.postMessage({
-        devtoolsEnabled: Vue && Vue.config.devtools,
-        vueDetected: true,
-        nuxtDetected: true
-      }, '*')
-
-      return
-    }
-
     // Method 2: Check  Vue 3
-    const vueDetected = !!(window.__VUE__)
-    if (vueDetected) {
+    const mubanDetected = !!(window.__MUBAN__)
+    if (mubanDetected) {
       win.postMessage({
         // TODO disable devtools
         devtoolsEnabled: true,
-        vueDetected: true
+        mubanDetected: true
       }, '*')
-
-      return
     }
 
     // Method 3: Scan all elements inside document
-    const all = document.querySelectorAll('*')
-    let el
-    for (let i = 0; i < all.length; i++) {
-      if (all[i].__vue__) {
-        el = all[i]
-        break
-      }
-    }
-    if (el) {
-      let Vue = Object.getPrototypeOf(el.__vue__).constructor
-      while (Vue.super) {
-        Vue = Vue.super
-      }
-      win.postMessage({
-        devtoolsEnabled: Vue.config.devtools,
-        vueDetected: true
-      }, '*')
-    }
+    // const all = document.querySelectorAll('*')
+    // let el
+    // for (let i = 0; i < all.length; i++) {
+    //   if (all[i].__vue__) {
+    //     el = all[i]
+    //     break
+    //   }
+    // }
+    // if (el) {
+    //   let Vue = Object.getPrototypeOf(el.__vue__).constructor
+    //   while (Vue.super) {
+    //     Vue = Vue.super
+    //   }
+    //   win.postMessage({
+    //     devtoolsEnabled: Vue.config.devtools,
+    //     mubanDetected: true
+    //   }, '*')
+    // }
   }, 100)
 }
 

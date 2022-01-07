@@ -1,7 +1,7 @@
 import { ref, computed } from '@vue/composition-api'
 import { useRoute } from '@front/util/router'
 import { useApps } from '@front/features/apps'
-import { BridgeEvents, parse } from '@vue-devtools/shared-utils'
+import { BridgeEvents, parse } from '@muban-devtools/shared-utils'
 import { getBridge, useBridge } from '@front/features/bridge'
 
 function inspectorFactory (options) {

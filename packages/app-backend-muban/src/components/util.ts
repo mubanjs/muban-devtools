@@ -1,6 +1,6 @@
-// import { classify } from '@vue-devtools/shared-utils'
+// import { classify } from '@muban-devtools/shared-utils'
 // import { basename } from '../util'
-import { BackendContext } from '@vue-devtools/app-backend-api'
+import { BackendContext } from '@muban-devtools/app-backend-api'
 
 export function isBeingDestroyed (instance) {
   return instance._isBeingDestroyed || instance.isUnmounted

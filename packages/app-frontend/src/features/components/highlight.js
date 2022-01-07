@@ -1,5 +1,5 @@
 import { useBridge } from '../bridge'
-import { BridgeEvents } from '@vue-devtools/shared-utils'
+import { BridgeEvents } from '@muban-devtools/shared-utils'
 
 export function useComponentHighlight (id) {
   const { bridge } = useBridge()

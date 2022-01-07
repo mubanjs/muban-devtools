@@ -1,4 +1,4 @@
-import { TimelineLayerOptions } from '@vue/devtools-api'
+import { TimelineLayerOptions } from '@muban/devtools-api'
 
 export const builtinLayers: TimelineLayerOptions[] = [
   {

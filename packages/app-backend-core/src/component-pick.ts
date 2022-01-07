@@ -1,7 +1,7 @@
-import { isBrowser, BridgeEvents } from '@vue-devtools/shared-utils'
-import { BackendContext } from '@vue-devtools/app-backend-api'
+import { isBrowser, BridgeEvents } from '@muban-devtools/shared-utils'
+import { BackendContext } from '@muban-devtools/app-backend-api'
 import { highlight, unHighlight } from './highlighter'
-import { ComponentInstance } from '@vue/devtools-api'
+import { ComponentInstance } from '@muban/devtools-api'
 
 export default class ComponentPicker {
   ctx: BackendContext

@@ -1,9 +1,9 @@
-import { DevtoolsBackend, BuiltinBackendFeature } from '@vue-devtools/app-backend-api'
+import { DevtoolsBackend, BuiltinBackendFeature } from '@muban-devtools/app-backend-api'
 import { ComponentWalker } from './components/tree'
 import { editState, getInstanceDetails } from './components/data'
 import { getInstanceName } from './components/util'
 import { getComponentInstanceFromElement, getInstanceOrVnodeRect, getRootElementsFromComponentInstance } from './components/el'
-import { HookEvents } from '@vue-devtools/shared-utils'
+import { HookEvents } from '@muban-devtools/shared-utils'
 
 export const backend: DevtoolsBackend = {
   frameworkVersion: 3,

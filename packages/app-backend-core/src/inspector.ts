@@ -1,6 +1,6 @@
-import { App } from '@vue/devtools-api'
-import { BackendContext, CustomInspector } from '@vue-devtools/app-backend-api'
-import { BridgeEvents, parse, stringify } from '@vue-devtools/shared-utils'
+import { App } from '@muban/devtools-api'
+import { BackendContext, CustomInspector } from '@muban-devtools/app-backend-api'
+import { BridgeEvents, parse, stringify } from '@muban-devtools/shared-utils'
 import { getAppRecordId } from './app'
 
 export function getInspector (inspectorId: string, app: App, ctx: BackendContext) {

@@ -1,7 +1,7 @@
 import {
   createBackendContext,
   BackendContext
-} from '@vue-devtools/app-backend-api'
+} from '@muban-devtools/app-backend-api'
 import {
   Bridge,
   HookEvents,
@@ -9,7 +9,7 @@ import {
   BuiltinTabs,
   initSharedData,
   BridgeSubscriptions
-} from '@vue-devtools/shared-utils'
+} from '@muban-devtools/shared-utils'
 import { hook } from './global-hook'
 import { subscribe, unsubscribe, isSubscribed } from './util/subscriptions'
 import { highlight, unHighlight } from './highlighter'
@@ -24,7 +24,7 @@ import {
   getComponentInstance
 } from './component'
 import { addQueuedPlugins, addPlugin, sendPluginList, addPreviouslyRegisteredPlugins } from './plugin'
-import { PluginDescriptor, SetupFunction, TimelineLayerOptions, App, TimelineEventOptions, CustomInspectorOptions } from '@vue/devtools-api'
+import { PluginDescriptor, SetupFunction, TimelineLayerOptions, App, TimelineEventOptions, CustomInspectorOptions } from '@muban/devtools-api'
 import { registerApp, selectApp, mapAppRecord, getAppRecordId, waitForAppsRegistration } from './app'
 import { sendInspectorTree, getInspector, getInspectorWithAppId, sendInspectorState, editInspectorState } from './inspector'
 import { showScreenshot } from './timeline-screenshot'

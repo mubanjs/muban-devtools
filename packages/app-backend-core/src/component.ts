@@ -1,7 +1,7 @@
-import { stringify, BridgeEvents, parse } from '@vue-devtools/shared-utils'
-import { BackendContext } from '@vue-devtools/app-backend-api'
+import { stringify, BridgeEvents, parse } from '@muban-devtools/shared-utils'
+import { BackendContext } from '@muban-devtools/app-backend-api'
 import { getAppRecord } from './app'
-import { App, EditStatePayload } from '@vue/devtools-api'
+import { App, EditStatePayload } from '@muban/devtools-api'
 
 export async function sendComponentTreeData (instanceId: string, filter = '', ctx: BackendContext) {
   if (!instanceId) return

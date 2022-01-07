@@ -1,6 +1,6 @@
-import { AppRecord, BackendContext } from '@vue-devtools/app-backend-api'
-import { BridgeEvents, HookEvents, stringify } from '@vue-devtools/shared-utils'
-import { App, ID, TimelineEventOptions, WithId } from '@vue/devtools-api'
+import { AppRecord, BackendContext } from '@muban-devtools/app-backend-api'
+import { BridgeEvents, HookEvents, stringify } from '@muban-devtools/shared-utils'
+import { App, ID, TimelineEventOptions, WithId } from '@muban/devtools-api'
 import { hook } from './global-hook'
 import { getAppRecord, getAppRecordId } from './app'
 

@@ -1,4 +1,4 @@
-import { PluginDescriptor, SetupFunction } from '@vue/devtools-api'
+import { PluginDescriptor, SetupFunction } from '@muban/devtools-api'
 
 export interface Plugin {
   descriptor: PluginDescriptor

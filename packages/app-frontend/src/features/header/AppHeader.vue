@@ -1,7 +1,7 @@
 <script>
 import { computed, ref, watch } from '@vue/composition-api'
 import { useRoute } from '@front/util/router'
-import { BridgeEvents } from '@vue-devtools/shared-utils'
+import { BridgeEvents } from '@muban-devtools/shared-utils'
 import AppMainMenu from './AppMainMenu.vue'
 import AppHistoryNav from './AppHistoryNav.vue'
 import AppSelect from './AppSelect.vue'

@@ -1,5 +1,5 @@
 import { ref, computed, watch } from '@vue/composition-api'
-import { BridgeEvents } from '@vue-devtools/shared-utils'
+import { BridgeEvents } from '@muban-devtools/shared-utils'
 import { useBridge, getBridge } from '../bridge'
 import { useRoute, useRouter } from '@front/util/router'
 

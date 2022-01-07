@@ -1,8 +1,8 @@
-import { BackendContext } from '@vue-devtools/app-backend-api'
+import { BackendContext } from '@muban-devtools/app-backend-api'
 import { getInstanceName, getUniqueComponentId } from './util'
-import { camelize, classify, get, set } from '@vue-devtools/shared-utils'
-import SharedData from '@vue-devtools/shared-utils/lib/shared-data'
-import { HookPayloads, Hooks, InspectedComponentData } from '@vue/devtools-api'
+import { camelize, classify, get, set } from '@muban-devtools/shared-utils'
+import SharedData from '@muban-devtools/shared-utils/lib/shared-data'
+import { HookPayloads, Hooks, InspectedComponentData } from '@muban/devtools-api'
 
 /**
  * Get the detailed information of an inspected instance.
@@ -169,19 +169,22 @@ function createBindingProps (bindings, type) {
   })
 }
 
-function recursiveUnref (source: any): any {
+function recursiveUnref (source: any, depth = 0): any {
   const value = unref(source)
   if (Array.isArray(value)) {
     return value.map(recursiveUnref)
   }
   if (String(value) === '[object Object]') {
-    return mapValues(value, recursiveUnref)
+    if (depth > 10) {
+      return value
+    }
+    return mapValues(value, recursiveUnref, depth)
   }
   return value
 }
 
-const mapValues = (obj, fn) => {
-  return Object.fromEntries(Object.entries(obj).map(([key, value]) => [key, fn(value, key)]))
+const mapValues = (obj, fn, depth) => {
+  return Object.fromEntries(Object.entries(obj).map(([key, value]) => [key, fn(value, ++depth)]))
 }
 
 /**
@@ -266,19 +269,19 @@ function getExtraState (raw) {
 }
 
 function isRef (raw: any): boolean {
-  return !!raw.__v_isRef
+  return !!raw?.__v_isRef
 }
 
 function isComputed (raw: any): boolean {
-  return isRef(raw) && !!raw.effect
+  return isRef(raw) && !!raw?.effect
 }
 
 function isReactive (raw: any): boolean {
-  return !!raw.__v_isReactive
+  return !!raw?.__v_isReactive
 }
 
 function isReadOnly (raw: any): boolean {
-  return !!raw.__v_isReadonly
+  return !!raw?.__v_isReadonly
 }
 
 function getSetupStateInfo (raw: any) {

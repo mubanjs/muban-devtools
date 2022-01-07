@@ -1,5 +1,5 @@
-import { Bridge } from '@vue-devtools/shared-utils'
-import { TimelineLayerOptions, App, CustomInspectorOptions } from '@vue/devtools-api'
+import { Bridge } from '@muban-devtools/shared-utils'
+import { TimelineLayerOptions, App, CustomInspectorOptions } from '@muban/devtools-api'
 import { AppRecord } from './app-record'
 import { DevtoolsApi } from './api'
 import { Plugin } from './plugin'

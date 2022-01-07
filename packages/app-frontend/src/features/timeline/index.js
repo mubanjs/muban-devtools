@@ -1,5 +1,5 @@
 import { ref, computed, onUnmounted, watch } from '@vue/composition-api'
-import { BridgeEvents, getStorage, parse, setStorage } from '@vue-devtools/shared-utils'
+import { BridgeEvents, getStorage, parse, setStorage } from '@muban-devtools/shared-utils'
 import SharedData from '@utils/shared-data'
 import cloneDeep from 'lodash/cloneDeep'
 import Vue from 'vue'

@@ -1,5 +1,5 @@
 const path = require('path')
-const { createConfig } = require('@vue-devtools/build-tools')
+const { createConfig } = require('@muban-devtools/build-tools')
 const openInEditor = require('launch-editor-middleware')
 
 module.exports = createConfig({

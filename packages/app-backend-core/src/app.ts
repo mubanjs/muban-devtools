@@ -4,11 +4,11 @@ import {
   AppRecordOptions,
   BackendContext,
   DevtoolsBackend
-} from '@vue-devtools/app-backend-api'
-import { BridgeEvents } from '@vue-devtools/shared-utils'
+} from '@muban-devtools/app-backend-api'
+import { BridgeEvents } from '@muban-devtools/shared-utils'
 import { JobQueue } from './util/queue'
 
-import { backend as backendMuban } from '@vue-devtools/app-backend-muban'
+import { backend as backendMuban } from '@muban-devtools/app-backend-muban'
 
 const availableBackends = [
   backendMuban

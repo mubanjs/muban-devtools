@@ -1,5 +1,5 @@
 import { ref } from '@vue/composition-api'
-import { BridgeEvents } from '@vue-devtools/shared-utils'
+import { BridgeEvents } from '@muban-devtools/shared-utils'
 import { useBridge } from '../bridge'
 import { useComponentRequests, setComponentOpen } from '.'
 

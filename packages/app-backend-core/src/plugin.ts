@@ -1,6 +1,6 @@
-import { PluginDescriptor, SetupFunction } from '@vue/devtools-api'
-import { Plugin, BackendContext, DevtoolsPluginApiInstance } from '@vue-devtools/app-backend-api'
-import { BridgeEvents, target } from '@vue-devtools/shared-utils'
+import { PluginDescriptor, SetupFunction } from '@muban/devtools-api'
+import { Plugin, BackendContext, DevtoolsPluginApiInstance } from '@muban-devtools/app-backend-api'
+import { BridgeEvents, target } from '@muban-devtools/shared-utils'
 import { getAppRecordId } from './app'
 
 export function addPlugin (pluginDescriptor: PluginDescriptor, setupFn: SetupFunction, ctx: BackendContext) {

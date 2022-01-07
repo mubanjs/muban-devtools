@@ -1,7 +1,7 @@
 import { getUniqueComponentId, getInstanceName } from './util'
 import { ComponentFilter } from './filter'
-import { BackendContext } from '@vue-devtools/app-backend-api'
-import { ComponentTreeNode } from '@vue/devtools-api'
+import { BackendContext } from '@muban-devtools/app-backend-api'
+import { ComponentTreeNode } from '@muban/devtools-api'
 
 export class ComponentWalker {
   ctx: BackendContext

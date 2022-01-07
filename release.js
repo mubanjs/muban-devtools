@@ -45,12 +45,6 @@ const curVersion = pkg.version
 
     fs.writeFileSync('./package.json', JSON.stringify(pkg, null, 2))
     {
-      // Electron package
-      const pkg = require('./packages/shell-electron/package.json')
-      pkg.version = newVersion
-      fs.writeFileSync('./packages/shell-electron/package.json', JSON.stringify(pkg, null, 2))
-    }
-    {
       // API package
       const pkg = require('./packages/api/package.json')
       pkg.version = newVersion

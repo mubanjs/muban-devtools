@@ -1,8 +1,8 @@
-import { BackendContext } from '@vue-devtools/app-backend-api'
+import { BackendContext } from '@muban-devtools/app-backend-api'
 import { getInstanceName, getUniqueComponentId } from './util'
-import { camelize, get, set } from '@vue-devtools/shared-utils'
-import SharedData from '@vue-devtools/shared-utils/lib/shared-data'
-import { HookPayloads, Hooks, InspectedComponentData } from '@vue/devtools-api'
+import { camelize, get, set } from '@muban-devtools/shared-utils'
+import SharedData from '@muban-devtools/shared-utils/lib/shared-data'
+import { HookPayloads, Hooks, InspectedComponentData } from '@muban/devtools-api'
 
 /**
  * Get the detailed information of an inspected instance.

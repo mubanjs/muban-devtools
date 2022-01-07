@@ -1,5 +1,5 @@
 import { onUnmounted } from '@vue/composition-api'
-import { BridgeEvents } from '@vue-devtools/shared-utils'
+import { BridgeEvents } from '@muban-devtools/shared-utils'
 
 let bridge
 

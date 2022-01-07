@@ -1,5 +1,5 @@
-import { BackendContext } from '@vue-devtools/app-backend-api'
-import { ID, ScreenshotOverlayRenderContext } from '@vue/devtools-api'
+import { BackendContext } from '@muban-devtools/app-backend-api'
+import { ID, ScreenshotOverlayRenderContext } from '@muban/devtools-api'
 import { JobQueue } from './util/queue'
 import { builtinLayers } from './timeline-builtins'
 

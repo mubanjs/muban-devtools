@@ -1,6 +1,6 @@
-import { setupDevtoolsPlugin } from '@vue/devtools-api'
+import { setupDevtoolsPlugin } from '@muban/devtools-api'
 
-/** @type {import('@vue/devtools-api').DevtoolsPluginApi} */
+/** @type {import('@muban/devtools-api').DevtoolsPluginApi} */
 let devtoolsApi
 
 export default {
@@ -12,7 +12,7 @@ export default {
     }, (api) => {
       devtoolsApi = api
 
-      let time = 0
+      const time = 0
 
       api.on.walkComponentTree((payload, ctx) => {
         if (payload.componentInstance.type.name === 'MyApp') {

@@ -18,9 +18,9 @@ exports.createConfig = (config, target = { chrome: 52, firefox: 48 }) => {
     resolve: {
       extensions: ['.js', '.vue'],
       alias: {
-        '@front': '@vue-devtools/app-frontend/src',
-        '@back': '@vue-devtools/app-backend-core/lib',
-        '@utils': '@vue-devtools/shared-utils/lib'
+        '@front': '@muban-devtools/app-frontend/src',
+        '@back': '@muban-devtools/app-backend-core/lib',
+        '@utils': '@muban-devtools/shared-utils/lib'
       },
       symlinks: false
     },
@@ -61,7 +61,7 @@ exports.createConfig = (config, target = { chrome: 52, firefox: 48 }) => {
               loader: 'style-resources-loader',
               options: {
                 patterns: [
-                  require.resolve('@vue-devtools/app-frontend/src/assets/style/imports.styl')
+                  require.resolve('@muban-devtools/app-frontend/src/assets/style/imports.styl')
                 ]
               }
             }

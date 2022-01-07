@@ -1,5 +1,5 @@
 import { DevtoolsBackend } from './backend'
-import { App, ComponentInstance, TimelineEventOptions, ID, WithId } from '@vue/devtools-api'
+import { App, ComponentInstance, TimelineEventOptions, ID, WithId } from '@muban/devtools-api'
 
 export interface AppRecordOptions {
   app: App

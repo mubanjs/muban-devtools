@@ -1,4 +1,4 @@
-import { inDoc, isBrowser } from '@vue-devtools/shared-utils'
+import { inDoc, isBrowser } from '@muban-devtools/shared-utils'
 import { isFragment } from './util'
 
 export function getComponentInstanceFromElement (element) {

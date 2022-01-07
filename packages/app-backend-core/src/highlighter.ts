@@ -1,5 +1,5 @@
-import { isBrowser } from '@vue-devtools/shared-utils'
-import { BackendContext } from '@vue-devtools/app-backend-api'
+import { isBrowser } from '@muban-devtools/shared-utils'
+import { BackendContext } from '@muban-devtools/app-backend-api'
 import { JobQueue } from './util/queue'
 
 let overlay: HTMLDivElement

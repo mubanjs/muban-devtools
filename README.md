@@ -44,6 +44,12 @@ extension in Chrome's extension management panel.
 
 To enable this feature, follow [this guide](./docs/open-in-editor.md).
 
+### Release
+
+1. Run `yarn release`
+2. Enter a new version number
+3. `muban-devtools.zip` is now present in the `dist` folder.
+
 ### Manual Installation
 
 This is only necessary when you want to build the extension yourself from source to get not-yet-released features.
@@ -82,6 +88,8 @@ yarn dev:shell-muban
 ```
 
 Once everything is setup, you should be able to visit http://localhost:8090/
+
+This page will load an iframe at http://localhost:8080/bundle.js where your muban dev app should be running from.
 
 ### Common problems and how to fix
 

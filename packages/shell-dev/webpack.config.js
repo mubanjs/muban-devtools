@@ -1,12 +1,12 @@
 const path = require('path')
-const { createConfig } = require('@vue-devtools/build-tools')
+const { createConfig } = require('@muban-devtools/build-tools')
 const openInEditor = require('launch-editor-middleware')
 
 module.exports = createConfig({
   entry: {
-    devtools: require.resolve('@vue-devtools/shell-host/src/devtools.js'),
-    backend: require.resolve('@vue-devtools/shell-host/src/backend.js'),
-    hook: require.resolve('@vue-devtools/shell-host/src/hook.js'),
+    devtools: require.resolve('@muban-devtools/shell-host/src/devtools.js'),
+    backend: require.resolve('@muban-devtools/shell-host/src/backend.js'),
+    hook: require.resolve('@muban-devtools/shell-host/src/hook.js'),
     target: './src/index.js'
   },
   output: {

@@ -1,4 +1,4 @@
-import { classify } from '@vue-devtools/shared-utils'
+import { classify } from '@muban-devtools/shared-utils'
 import { getInstanceName } from './util'
 
 export class ComponentFilter {

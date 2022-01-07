@@ -4,7 +4,7 @@ import ComponentsInspector from './features/components/ComponentsInspector.vue'
 import CustomInspector from './features/inspector/custom/CustomInspector.vue'
 import Timeline from './features/timeline/Timeline.vue'
 import GlobalSettings from './features/settings/GlobalSettings.vue'
-import { BuiltinTabs, getStorage, setStorage } from '@vue-devtools/shared-utils'
+import { BuiltinTabs, getStorage, setStorage } from '@muban-devtools/shared-utils'
 
 Vue.use(VueRouter)
 

@@ -1,7 +1,7 @@
 import { ref, computed, watch } from '@vue/composition-api'
 import Vue from 'vue'
 import groupBy from 'lodash/groupBy'
-import { BridgeEvents, parse, sortByKey, searchDeepInObject, BridgeSubscriptions, isChrome, openInEditor } from '@vue-devtools/shared-utils'
+import { BridgeEvents, parse, sortByKey, searchDeepInObject, BridgeSubscriptions, isChrome, openInEditor } from '@muban-devtools/shared-utils'
 import { getBridge, useBridge } from '../bridge'
 import { useRoute, useRouter } from '@front/util/router'
 import { putError } from '../error'

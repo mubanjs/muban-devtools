@@ -1,4 +1,4 @@
-import { Bridge, HookEvents, set } from '@vue-devtools/shared-utils'
+import { Bridge, HookEvents, set } from '@muban-devtools/shared-utils'
 import {
   Hooks,
   HookPayloads,
@@ -10,7 +10,7 @@ import {
   CustomInspectorOptions,
   EditStatePayload,
   WithId
-} from '@vue/devtools-api'
+} from '@muban/devtools-api'
 import { DevtoolsHookable } from './hooks'
 import { BackendContext } from './backend-context'
 import { Plugin } from './plugin'

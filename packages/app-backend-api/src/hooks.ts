@@ -1,4 +1,4 @@
-import { Hooks, HookPayloads, Hookable, HookHandler } from '@vue/devtools-api'
+import { Hooks, HookPayloads, Hookable, HookHandler } from '@muban/devtools-api'
 import { BackendContext } from './backend-context'
 import { Plugin } from './plugin'
 
